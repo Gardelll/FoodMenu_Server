@@ -15,7 +15,7 @@ import java.net.HttpURLConnection;
 import java.sql.SQLException;
 import java.util.stream.IntStream;
 
-@WebServlet(name = "EditMenu", urlPatterns = "/edit-menu.php")
+@WebServlet(name = "EditMenu", urlPatterns = "/edit-menu")
 public class EditMenu extends HttpServlet {
 
     private final Object databaseLock = new Object();

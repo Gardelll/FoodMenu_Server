@@ -16,7 +16,7 @@ import java.net.HttpURLConnection;
 import java.sql.SQLException;
 import java.util.Optional;
 
-@WebServlet(name = "Login", urlPatterns = "/login.php")
+@WebServlet(name = "Login", urlPatterns = "/login")
 public class Login extends HttpServlet {
 
     @Override

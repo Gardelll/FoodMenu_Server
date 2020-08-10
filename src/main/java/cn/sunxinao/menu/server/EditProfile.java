@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.sql.SQLException;
 
-@WebServlet(name = "EditProfile", urlPatterns = "/edit-profile.php")
+@WebServlet(name = "EditProfile", urlPatterns = "/edit-profile")
 public class EditProfile extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (!request.getContentType().equals("application/protobuf")) {

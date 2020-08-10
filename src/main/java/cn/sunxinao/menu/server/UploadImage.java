@@ -15,7 +15,7 @@ import javax.servlet.http.Part;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
-@WebServlet(name = "UploadImage", urlPatterns = "/upload-image.php")
+@WebServlet(name = "UploadImage", urlPatterns = "/upload-image")
 @MultipartConfig
 public class UploadImage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {

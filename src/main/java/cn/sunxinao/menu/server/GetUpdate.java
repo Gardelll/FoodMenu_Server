@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "GetUpdate", urlPatterns = "/get-update.php")
+@WebServlet(name = "GetUpdate", urlPatterns = "/get-update")
 public class GetUpdate extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (!request.getContentType().equals("application/protobuf")) {

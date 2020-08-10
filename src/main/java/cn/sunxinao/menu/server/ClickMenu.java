@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "ClickMenu", urlPatterns = "/click.php")
+@WebServlet(name = "ClickMenu", urlPatterns = "/click")
 public class ClickMenu extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

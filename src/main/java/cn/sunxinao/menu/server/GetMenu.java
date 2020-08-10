@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.sql.SQLException;
 
-@WebServlet(name = "GetMenu", urlPatterns = "/get-menu.php")
+@WebServlet(name = "GetMenu", urlPatterns = "/get-menu")
 public class GetMenu extends HttpServlet {
 
     @Override

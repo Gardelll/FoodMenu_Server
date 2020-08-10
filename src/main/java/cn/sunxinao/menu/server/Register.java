@@ -17,7 +17,7 @@ import java.net.HttpURLConnection;
 import java.sql.SQLException;
 import java.util.Objects;
 
-@WebServlet(name = "Register", urlPatterns = "/register.php")
+@WebServlet(name = "Register", urlPatterns = "/register")
 public class Register extends HttpServlet {
 
     @Override

@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 import java.sql.SQLException;
 import java.util.Optional;
 
-@WebServlet(name = "Comment", urlPatterns = "/comment.php")
+@WebServlet(name = "Comment", urlPatterns = "/comment")
 public class Comment extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (!request.getContentType().equals("application/protobuf")) {
