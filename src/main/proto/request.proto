@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package cn.sunxinao.menu.proto;
+
+option java_package = "cn.sunxinao.menu.proto";
+
+/**
+ * 接口数据规范：
+ * 1. 请求分为普通请求和protobuf请求, 若使用http协议protobuf请求必须双方设置报头content-type: application/protobuf
+ * 2. 所有请求必须验证Token(除了登录请求由密码生成token)
+ * 3. 返回数据必须含有code字段(uint32), 若操作失败code返回非0值并伴有msg错误消息
+ * 4. 返回值若带有数据，放在detail(Any)对象中
+ */
+
+message LoginRequest {
+  string user_name = 1;
+  string user_pass = 2;
+  string token = 3;
+}
+
+message RegisterRequest {
+  string user_name = 1;
+  string user_pass = 2;
+  uint32 school_num = 3;
+  string nick_name = 4;
+  string phone = 5;
+  string email = 6;
+}
+
+message EditProfileRequest {
+  uint64 user_id = 1;
+  string token = 2;
+  uint32 school_num = 3;
+  string nick_name = 4;
+  string phone = 5;
+  string email = 6;
+  string avatar = 7;
+}
+
+message AddCommentRequest {
+  uint64 user_id = 1;
+  string token = 2;
+  uint64 food_id = 3;
+  uint32 score = 4;
+  string comment = 5;
+}
+
+message EditMenuRequest {
+  uint64 user_id = 1;
+  string token = 2;
+  uint64 food_id = 3;
+  uint32 window_id = 4;
+  string name = 5;
+  string price = 6;
+  string food_time = 7;
+  string img_url = 8;
+}
+
+message GetMenuRequest {
+  uint64 user_id = 1;
+  string token = 2;
+}
+
+message GetUpdateRequest {
+  uint64 user_id = 1;
+  string token = 2;
+  uint32 current_version = 3;
+}

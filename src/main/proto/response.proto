@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package cn.sunxinao.menu.proto;
+
+import "google/protobuf/any.proto";
+
+option java_package = "cn.sunxinao.menu.proto";
+
+message Response {
+  // Code
+  // 0 = success
+  // 101 = need register
+  uint32 code = 1;
+  string msg = 2;
+  message LoginResponse {
+    uint64 user_id = 1;
+    string user_name = 2;
+    string token = 3;
+    uint64 expire = 4;
+    string nick_name = 5;
+    uint64 school_num = 6;
+    string phone = 7;
+    string email = 8;
+    string profile_photo = 9;
+  }
+
+  message MenuResponse {
+    repeated Menu menu_list = 1;
+    message Menu {
+      uint64 food_id = 1; // 菜单唯一id
+      uint32 window_id = 2; // 窗口号
+      string name = 3; // 菜名
+      string price = 4; // 单价
+      string food_time = 5; // 饭点
+      uint32 score = 6; // 评分
+      uint64 hot = 7; // 热度(点击次数)
+      string img_url = 8; // 照片链接(json数组)
+    }
+  }
+
+  message CommentResponse {
+    repeated Comment comment_list = 1;
+    message Comment {
+      uint64 comment_id = 1;
+      uint64 user_id = 2;
+      uint64 food_id = 3;
+      uint32 score = 4;
+      string comment = 5;
+      uint64 time = 6;
+      string nick_name = 7;
+      string user_profile_photo = 8;
+    }
+  }
+
+  message GetUpdateResponse {
+    string update_time = 1;
+    uint32 version_code = 2;
+    string version_string = 3;
+    string update_summary = 4;
+    string download_url = 5;
+  }
+
+  google.protobuf.Any details = 3;
+}
