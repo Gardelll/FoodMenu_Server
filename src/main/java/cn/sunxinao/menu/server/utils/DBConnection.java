@@ -34,7 +34,7 @@ public class DBConnection {
 
     public static Connection getConnection() {
         try {
-            if (connection.isClosed()) {
+            if (connection == null || connection.isClosed()) {
                 connection = dataSource.getConnection();
             }
         } catch (SQLException e) {
