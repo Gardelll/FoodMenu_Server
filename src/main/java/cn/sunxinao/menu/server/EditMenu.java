@@ -3,17 +3,16 @@ package cn.sunxinao.menu.server;
 import cn.sunxinao.menu.proto.ResponseOuterClass;
 import cn.sunxinao.menu.server.utils.DBConnection;
 import cn.sunxinao.menu.server.utils.ThreadUtil;
-import org.json.JSONArray;
-
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.sql.SQLException;
+import java.util.stream.IntStream;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.sql.SQLException;
-import java.util.stream.IntStream;
+import org.json.JSONArray;
 
 @WebServlet(name = "EditMenu", urlPatterns = "/edit-menu")
 public class EditMenu extends HttpServlet {
@@ -95,13 +94,13 @@ public class EditMenu extends HttpServlet {
                             }
                         } else {
                             // 添加
-                            try (var query = DBConnection.getConnection().prepareStatement("INSERT INTO `menu` (`food_id`, `window_id`, `name`, `price`, `food_time`, `img_url`) VALUES (NULL, ?, ?, ?, ?, ?)")) {
+                            try (var query = DBConnection.getConnection()
+                                .prepareStatement("INSERT INTO `menu` (`food_id`, `window_id`, `name`, `price`, `food_time`, `img_url`) VALUES (NULL, ?, ?, ?, ?, ?)")) {
                                 query.setInt(1, windowId);
                                 query.setString(2, name);
                                 query.setString(3, price);
                                 query.setString(4, foodTime);
                                 query.setString(5, imgUrl);
-                                query.setLong(6, System.currentTimeMillis());
                                 query.execute();
                             } catch (SQLException e) {
                                 e.printStackTrace();
