@@ -3,17 +3,16 @@ package cn.sunxinao.menu.server;
 import cn.sunxinao.menu.proto.ResponseOuterClass;
 import cn.sunxinao.menu.server.utils.DBConnection;
 import com.google.protobuf.Any;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "GetUpdate", urlPatterns = "/get-update")
 public class GetUpdate extends HttpServlet {

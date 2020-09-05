@@ -2,14 +2,13 @@ package cn.sunxinao.menu.server;
 
 import cn.sunxinao.menu.proto.ResponseOuterClass;
 import cn.sunxinao.menu.server.utils.DBConnection;
-
+import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet(name = "ClickMenu", urlPatterns = "/click")
 public class ClickMenu extends HttpServlet {

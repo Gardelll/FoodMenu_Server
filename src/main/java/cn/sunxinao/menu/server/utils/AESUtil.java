@@ -1,12 +1,11 @@
 package cn.sunxinao.menu.server.utils;
 
-import org.jetbrains.annotations.NotNull;
-
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
+import org.jetbrains.annotations.NotNull;
 
 public class AESUtil {
     public final static byte[] AES_SECRET = {-1, -127, 109, -6, 27, -103, 51, -126, -29, -16, 126, 44, -47, -124, 14, -111};

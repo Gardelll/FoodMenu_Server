@@ -3,16 +3,15 @@ package cn.sunxinao.menu.server;
 import cn.sunxinao.menu.proto.ResponseOuterClass;
 import cn.sunxinao.menu.server.utils.DBConnection;
 import com.google.protobuf.Any;
-
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.sql.SQLException;
+import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.sql.SQLException;
-import java.util.Optional;
 
 @WebServlet(name = "Comment", urlPatterns = "/comment")
 public class Comment extends HttpServlet {

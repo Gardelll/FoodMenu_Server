@@ -1,11 +1,10 @@
 package cn.sunxinao.menu.server.utils;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-
-import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import javax.sql.DataSource;
 
 import static cn.sunxinao.menu.server.utils.Settings.DB_PROPERTIES;
 
