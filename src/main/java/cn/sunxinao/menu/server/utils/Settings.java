@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Settings {
 
-    public static final String APP_HOME = System.getProperty("user.home", System.getenv("HOME")) + "/hist-menu";
+    public static final String APP_HOME = System.getProperty("user.home", System.getenv("HOME")) + "/food-menu";
 
     public static final String UPLOAD_DIR = APP_HOME + "/uploads";
 

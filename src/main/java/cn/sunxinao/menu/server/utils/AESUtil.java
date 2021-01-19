@@ -15,7 +15,7 @@ public class AESUtil {
         secretKey = new SecretKeySpec(myKey, "AES");
     }
 
-    public static String encrypt(@NotNull String strToEncrypt, @NotNull byte[] secret) {
+    public static String encrypt(@NotNull String strToEncrypt, byte[] secret) {
         try {
             setKey(secret);
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -27,7 +27,7 @@ public class AESUtil {
         return null;
     }
 
-    public static String decrypt(@NotNull String strToDecrypt, @NotNull byte[] secret) {
+    public static String decrypt(@NotNull String strToDecrypt, byte[] secret) {
         try {
             setKey(secret);
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
